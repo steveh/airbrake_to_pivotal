@@ -8,6 +8,10 @@ class HoptoadToPivotal < Sinatra::Base
 
   $pivotal = Pivotal.new(ENV["HOPTOAD_REQUESTOR"])
 
+  use Rack::Auth::Basic do |username, password|
+    username == ENV["HTTP_BASIC_USERNAME"] && password == ENV["HTTP_BASIC_PASSWORD"]
+  end
+
   get "/" do
     bugs = $hoptoad.bugs
 
