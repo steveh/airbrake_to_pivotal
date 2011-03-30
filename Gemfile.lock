@@ -1,6 +1,7 @@
 GEM
   remote: http://rubygems.org/
   specs:
+    builder (2.1.2)
     crack (0.1.8)
     httparty (0.7.4)
       crack (= 0.1.8)
@@ -14,5 +15,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  builder
   httparty
   sinatra
