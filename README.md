@@ -4,7 +4,7 @@
 
 2. Create a Heroku app
 
-        heroku create myapp --stack bamboo-mri-1.9.2
+        heroku create myapp
 
 3. Your airbrake username is from eg http://acme.airbrakeapp.com/
 
