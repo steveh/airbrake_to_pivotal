@@ -15,6 +15,8 @@ class AirbrakeToPivotal < Sinatra::Base
   get "/" do
     bugs = $airbrake.bugs
 
+    content_type "text/xml", :charset => "utf-8"
+
     $pivotal.bugs_to_xml(bugs)
   end
 
