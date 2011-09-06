@@ -17,6 +17,8 @@ class AirbrakeToPivotal < Sinatra::Base
 
     content_type "text/xml", :charset => "utf-8"
 
+    content_type "text/xml", :charset => "utf-8"
+
     $pivotal.bugs_to_xml(bugs)
   end
 
