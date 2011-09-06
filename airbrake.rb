@@ -6,7 +6,7 @@ class Airbrake
 
   attr_reader :username, :auth_token, :project_id, :protocol
 
-  def initialize(username, auth_token, project_id, protocol = 'http')
+  def initialize(username, auth_token, project_id, protocol = "https")
     @username, @auth_token, @project_id, @protocol = username, auth_token, project_id, protocol
   end
 
@@ -16,7 +16,7 @@ class Airbrake
 
   def bugs
     response = fetch
-    @protocol = 'https' and response = fetch if response.blank?
+    @protocol = "http" and response = fetch if response.blank?
     response["groups"]
   end
 
