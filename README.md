@@ -6,21 +6,21 @@
 
         heroku create myapp --stack bamboo-mri-1.9.2
 
-3. Your hoptoad username is from eg http://acme.hoptoadapp.com/
+3. Your airbrake username is from eg http://acme.airbrakeapp.com/
 
-        heroku config:add HOPTOAD_USERNAME=acme
+        heroku config:add AIRBRAKE_USERNAME=acme
 
-4. This is your user auth token, not the project auth token, which doesn't work. From eg http://acme.hoptoadapp.com/users/12345/edit
+4. This is your user auth token, not the project auth token, which doesn't work. From eg http://acme.airbrakeapp.com/users/12345/edit
 
-        heroku config:add HOPTOAD_AUTH_TOKEN=deadbeef
+        heroku config:add AIRBRAKE_AUTH_TOKEN=deadbeef
 
 5. You can leave the requestor blank, if you like.
 
-        heroku config:add HOPTOAD_REQUESTOR="John Smith"
+        heroku config:add AIRBRAKE_REQUESTOR="John Smith"
 
-6. Your project ID is from eg http://acme.hoptoadapp.com/projects/12345/errors
+6. Your project ID is from eg http://acme.airbrakeapp.com/projects/12345/errors
 
-        heroku config:add HOPTOAD_PROJECT_ID=12345
+        heroku config:add AIRBRAKE_PROJECT_ID=12345
 
 7. Pick a username for Pivotal to use
 
@@ -40,13 +40,13 @@
 
 11. Add the integration to Pivotal. From the "Configure Integrations" page, add an "Other" integration.
 
-    * **Name:** Hoptoad
+    * **Name:** Airbrake
     * **Basic Auth username:** What you picked for HTTP_BASIC_USERNAME
     * **Basic Auth password:** What you picked for HTTP_BASIC_PASSWORD
-    * **Base URL:** http://acme.hoptoadapp.com/errors/
+    * **Base URL:** http://acme.airbrakeapp.com/errors/
     * **Import API URL:** http://myapp.heroku.com/
     * **Active: Yes**
 
-12. From the "More" menu of Pivotal Tracker you should see "Hoptoad"
+12. From the "More" menu of Pivotal Tracker you should see "Airbrake"
 
 13. Buy me a beer.
