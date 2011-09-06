@@ -1,6 +1,6 @@
 1. Grab a copy of the source
 
-        git clone git://github.com/steveh/hoptoad_to_pivotal.git
+        git clone git://github.com/steveh/airbrake_to_pivotal.git
 
 2. Create a Heroku app
 
