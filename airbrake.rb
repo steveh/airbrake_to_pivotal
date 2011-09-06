@@ -1,6 +1,6 @@
 require "httparty"
 
-class Hoptoad
+class Airbrake
 
   include HTTParty
 
@@ -11,9 +11,9 @@ class Hoptoad
   end
 
   def fetch
-    self.class.get("#{protocol}://#{username}.hoptoadapp.com/errors.xml", { :query => { :auth_token => auth_token, :project_id => project_id } })
+    self.class.get("#{protocol}://#{username}.airbrakeapp.com/errors.xml", { :query => { :auth_token => auth_token, :project_id => project_id } })
   end
-  
+
   def bugs
     response = fetch
     @protocol = 'https' and response = fetch if response.blank?
