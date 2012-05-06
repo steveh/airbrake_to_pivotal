@@ -19,8 +19,7 @@ class Pivotal
       bugs.each do |bug|
         description =  {
           'File' => bug.values_at("file", "line_number").compact.join(':'),
-          'Controller' => bug["controller"],
-          'Action' => bug["action"],
+          'Action' => bug.values_at("controller", "action").compact.join('#'),
           'Environment' => bug["rails_env"]
         }.map do |label, value|
           "#{label}: #{value}" if value
