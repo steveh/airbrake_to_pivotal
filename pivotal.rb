@@ -22,7 +22,7 @@ class Pivotal
           'Action' => bug.values_at("controller", "action").compact.join('#'),
           'Environment' => bug["rails_env"]
         }.map do |label, value|
-          "#{label}: #{value}" if value
+          "#{label}: #{value}" if value && !value.empty?
         end.compact
 
         description << "\n#{bug["error_message"]}"
