@@ -18,8 +18,7 @@ class Pivotal
     xml.external_stories(:type => "array") do
       bugs.each do |bug|
         description = <<-EOF
-File: #{bug["file"]}
-Line number: #{bug["line_number"]}
+File: #{bug.values_at("file", "line_number").compact.join(':')}
 Controller: #{bug["controller"]}
 Action: #{bug["action"]}
 Environment: #{bug["rails_env"]}
