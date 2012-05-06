@@ -17,20 +17,20 @@ class Pivotal
 
     xml.external_stories(:type => "array") do
       bugs.each do |bug|
-        description = <<-EOF
-File: #{bug["file"]}
-Line number: #{bug["line_number"]}
-Controller: #{bug["controller"]}
-Action: #{bug["action"]}
-Environment: #{bug["rails_env"]}
+        description =  {
+          'File' => bug.values_at("file", "line_number").compact.join(':'),
+          'Action' => bug.values_at("controller", "action").compact.join('#'),
+          'Environment' => bug["rails_env"]
+        }.map do |label, value|
+          "#{label}: #{value}" if value && !value.empty?
+        end.compact
 
-#{bug["error_message"]}
-EOF
+        description << "\n#{bug["error_message"]}"
 
         xml.external_story do
           xml.external_id bug["id"]
           xml.name bug["error_class"]
-          xml.description description
+          xml.description description.join("\n")
           xml.requested_by requestor
           xml.created_at({ :type => "datetime" }, bug["created_at"])
           xml.story_type "bug"
