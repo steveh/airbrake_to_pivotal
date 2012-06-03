@@ -20,7 +20,8 @@ class Pivotal
         description =  {
           'File' => bug.values_at("file", "line_number").compact.join(':'),
           'Action' => bug.values_at("controller", "action").compact.join('#'),
-          'Environment' => bug["rails_env"]
+          'Environment' => bug["rails_env"],
+          'Exception' => bug["error_class"]
         }.map do |label, value|
           "#{label}: #{value}" if value && !value.empty?
         end.compact
@@ -29,7 +30,7 @@ class Pivotal
 
         xml.external_story do
           xml.external_id bug["id"]
-          xml.name bug["error_class"]
+          xml.name bug["error_message"]
           xml.description description.join("\n")
           xml.requested_by requestor
           xml.created_at({ :type => "datetime" }, bug["created_at"])
