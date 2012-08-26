@@ -1,3 +1,12 @@
+Deprecated
+==========
+
+Airbrake now natively supports Pivotal Tracker
+
+http://help.airbrake.io/kb/integrations/pivotal-tracker-integration
+
+***
+
 1. Grab a copy of the source
 
         git clone git://github.com/steveh/airbrake_to_pivotal.git
@@ -48,5 +57,3 @@
     * **Active: Yes**
 
 12. From the "More" menu of Pivotal Tracker you should see "Airbrake"
-
-13. Buy me a beer.
