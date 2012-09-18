@@ -10,7 +10,7 @@ Heroku Users
 To get it working with Heroku, the integration is a two step process.
 
 * Adding exceptions as "bug" stories in Pivotal Tracker
- * Use the [instructions](#instruction) below (not those from the link above)
+ * Use the [instructions](#instructions) below (not those from the link above)
 * Getting updates from Pivotal Tracker in your Airbrake errors
  * Follow the instructions from the [link](http://help.airbrake.io/kb/integrations/pivotal-tracker-integration) above.
 
